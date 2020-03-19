@@ -1,0 +1,44 @@
+app:
+  name: demo
+  version: 0.0.1-SNAPSHOT
+  description: demo para parent
+  contact:
+    name: Yasser
+    url: http://yasser.com
+    email: hola@hola.com
+  termsOfService: hola
+  license:
+    name: Apache 2.0
+    url: http://apache.2.0
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: Hemmi2000__
+    url: jdbc:postgresql://localhost:5432/test
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+topad:
+  webutils:
+    swagger:
+      enabled: true
+      redirectUrl: /api/swagger
+      basePackage: org.grade.demo
+    exceptionHandler:
+      enabled: true
+      messages:
+        notFoundError: "Element not found: ${message}" 
+        typeMismatch: "The parameter ${parameterName} can't be converted from ${parameterType} to ${requieredType}"
